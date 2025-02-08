@@ -1,0 +1,8 @@
+import matplotlib.pyplot as plt
+
+fig = plt.figure(figsize=(4, 2))
+fig.text(.15, .6, "Unicode minus:", fontsize=20)
+fig.text(.85, .6, "\N{MINUS SIGN}1", ha='right', fontsize=20)
+fig.text(.15, .3, "ASCII hyphen:", fontsize=20)
+fig.text(.85, .3, "-1", ha='right', fontsize=20)
+plt.show()
