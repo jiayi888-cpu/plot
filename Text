@@ -1,0 +1,12 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+t = np.arange(0.0, 2.0, 0.01)
+s = np.sin(2*np.pi*t)
+
+plt.plot(t, s)
+plt.text(0, -1, r'Hello, world!', fontsize=15)
+plt.title(r'$\mathcal{A}\sin(\omega t)$', fontsize=20)
+plt.xlabel('Time [s]')
+plt.ylabel('Voltage [mV]')
+plt.show()
