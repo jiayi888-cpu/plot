@@ -1,0 +1,21 @@
+import matplotlib.pyplot as plt
+
+from matplotlib.gridspec import GridSpec
+
+
+def annotate_axes(fig):
+    for i, ax in enumerate(fig.axes):
+        ax.text(0.5, 0.5, "ax%d" % (i+1), va="center", ha="center")
+        ax.tick_params(labelbottom=False, labelleft=False)
+
+
+fig = plt.figure()
+fig.suptitle("Controlling subplot sizes with width_ratios and height_ratios")
+
+gs = GridSpec(2, 2, width_ratios=[1, 2], height_ratios=[4, 1])
+ax1 = fig.add_subplot(gs[0])
+ax2 = fig.add_subplot(gs[1])
+ax3 = fig.add_subplot(gs[2])
+ax4 = fig.add_subplot(gs[3])
+
+annotate_axes(fig)
