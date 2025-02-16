@@ -1,0 +1,2 @@
+FLASK_APP=web_application_server_sgskip flask runset FLASK_APP=web_application_server_sgskip
+flask run
