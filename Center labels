@@ -1,0 +1,2 @@
+for label in ax.get_xticklabels():
+    label.set_horizontalalignment('right')
