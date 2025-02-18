@@ -1,0 +1,7 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+import matplotlib.ticker as mticker
+
+# Fixing random state for reproducibility
+rng = np.random.default_rng(seed=19680801)
