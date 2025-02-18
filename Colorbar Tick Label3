@@ -1,0 +1,12 @@
+fig, ax = plt.subplots()
+
+data = np.clip(data, -1, 1)
+
+cax = ax.imshow(data, cmap='afmhot')
+ax.set_title('Gaussian noise with horizontal colorbar')
+
+# Add colorbar and adjust ticks afterwards
+cbar = fig.colorbar(cax, orientation='horizontal')
+cbar.set_ticks(ticks=[-1, 0, 1], labels=['Low', 'Medium', 'High'])
+
+plt.show()
