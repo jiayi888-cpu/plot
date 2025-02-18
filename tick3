@@ -1,0 +1,4 @@
+fig, ax = plt.subplots()
+ax.scatter(x, y, c=x+y)
+ax.set_xmargin(0.8)
+plt.show()
