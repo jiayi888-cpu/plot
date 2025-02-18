@@ -1,0 +1,9 @@
+plt.rcParams['axes.autolimit_mode'] = 'round_numbers'
+
+# Note: The limits are calculated at draw-time. Therefore, when using
+# :rc:`axes.autolimit_mode` in a context manager, it is important that
+# the ``show()`` command is within the context.
+
+fig, ax = plt.subplots()
+ax.scatter(x, y, c=x+y)
+plt.show()
