@@ -1,0 +1,11 @@
+formatters = [
+    'AutoDateFormatter(ax.xaxis.get_major_locator())',
+    'ConciseDateFormatter(ax.xaxis.get_major_locator())',
+    'DateFormatter("%b %Y")',
+]
+
+fig, axs = plt.subplots(len(formatters), 1, figsize=(8, len(formatters) * .8),
+                        layout='constrained')
+fig.suptitle('Date Formatters')
+for ax, fmt in zip(axs, formatters):
+    plot_axis(ax, formatter=fmt)
