@@ -1,0 +1,9 @@
+_reset_epoch_for_tutorial()  # Just being done for this tutorial.
+mdates.set_epoch(new_epoch)
+
+date1 = datetime.datetime(2020, 1, 1, 0, 10, 0, 12,
+                          tzinfo=datetime.timezone.utc)
+mdate1 = mdates.date2num(date1)
+print('Before Roundtrip: ', date1, 'Matplotlib date:', mdate1)
+date2 = mdates.num2date(mdate1)
+print('After Roundtrip:  ', date2)
