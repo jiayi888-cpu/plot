@@ -1,0 +1,14 @@
+import datetime
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+import matplotlib.dates as mdates
+
+
+def _reset_epoch_for_tutorial():
+    """
+    Users (and downstream libraries) should not use the private method of
+    resetting the epoch.
+    """
+    mdates._reset_epoch_test_example()
