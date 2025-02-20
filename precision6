@@ -1,0 +1,8 @@
+_reset_epoch_for_tutorial()  # Don't do this.  Just for this tutorial.
+mdates.set_epoch(new_epoch)
+
+date1 = np.datetime64('2000-01-01T00:10:00.000012')
+mdate1 = mdates.date2num(date1)
+print('Before Roundtrip: ', date1, 'Matplotlib date:', mdate1)
+date2 = mdates.num2date(mdate1)
+print('After Roundtrip:  ', date2)
