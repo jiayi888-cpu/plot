@@ -1,0 +1,16 @@
+class MyFormatter(Formatter):
+    def __init__(self, dates, fmt='%a'):
+        self.dates = dates
+        self.fmt = fmt
+
+    def __call__(self, x, pos=0):
+        """Return the label for time x at position pos."""
+        try:
+            return self.dates[round(x)].item().strftime(self.fmt)
+        except IndexError:
+            pass
+
+
+ax2.xaxis.set_major_formatter(MyFormatter(r["date"], '%a'))
+
+plt.show()
