@@ -1,0 +1,4 @@
+try:
+    mdates.set_epoch(new_epoch)  # this is the new MPL 3.3 default.
+except RuntimeError as e:
+    print('RuntimeError:', str(e))
