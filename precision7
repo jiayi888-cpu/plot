@@ -1,0 +1,18 @@
+_reset_epoch_for_tutorial()  # Don't do this.  Just for this tutorial.
+mdates.set_epoch(old_epoch)
+
+x = np.arange('2000-01-01T00:00:00.0', '2000-01-01T00:00:00.000100',
+              dtype='datetime64[us]')
+# simulate the plot being made using the old epoch
+xold = np.array([mdates.num2date(mdates.date2num(d)) for d in x])
+y = np.arange(0, len(x))
+
+# resetting the Epoch so plots are comparable
+_reset_epoch_for_tutorial()  # Don't do this.  Just for this tutorial.
+mdates.set_epoch(new_epoch)
+
+fig, ax = plt.subplots(layout='constrained')
+ax.plot(xold, y)
+ax.set_title('Epoch: ' + mdates.get_epoch())
+ax.xaxis.set_tick_params(rotation=40)
+plt.show()
