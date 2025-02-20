@@ -1,0 +1,7 @@
+fig, ax = plt.subplots(layout='constrained')
+ax.plot(x, y)
+ax.set_title('Epoch: ' + mdates.get_epoch())
+ax.xaxis.set_tick_params(rotation=40)
+plt.show()
+
+_reset_epoch_for_tutorial()  # Don't do this.  Just for this tutorial.
