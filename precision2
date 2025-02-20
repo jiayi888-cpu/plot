@@ -1,0 +1,12 @@
+old_epoch = '0000-12-31T00:00:00'
+new_epoch = '1970-01-01T00:00:00'
+
+_reset_epoch_for_tutorial()  # Don't do this.  Just for this tutorial.
+mdates.set_epoch(old_epoch)  # old epoch (pre MPL 3.3)
+
+date1 = datetime.datetime(2000, 1, 1, 0, 10, 0, 12,
+                          tzinfo=datetime.timezone.utc)
+mdate1 = mdates.date2num(date1)
+print('Before Roundtrip: ', date1, 'Matplotlib date:', mdate1)
+date2 = mdates.num2date(mdate1)
+print('After Roundtrip:  ', date2)
