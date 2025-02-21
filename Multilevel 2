@@ -1,0 +1,16 @@
+fig, ax = plt.subplots(layout='constrained', figsize=(7, 4))
+
+ax.plot(['cats', 'dogs', 'pigs', 'snakes', 'lizards', 'chickens',
+         'eagles', 'herons', 'buzzards'],
+        rng.normal(size=9), 'o')
+
+# label the classes:
+sec = ax.secondary_xaxis(location=0)
+sec.set_xticks([1, 3.5, 6.5], labels=['\n\nMammals', '\n\nReptiles', '\n\nBirds'])
+sec.tick_params('x', length=0)
+
+# lines between the classes:
+sec2 = ax.secondary_xaxis(location=0)
+sec2.set_xticks([-0.5, 2.5, 4.5, 8.5], labels=[])
+sec2.tick_params('x', length=40, width=1.5)
+ax.set_xlim(-0.6, 8.6)
