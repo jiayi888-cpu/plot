@@ -1,0 +1,14 @@
+fig, ax = plt.subplots(1, 2, layout='constrained', figsize=(6, 2.75))
+x = ['2021-10-01', '2021-11-02', '2021-12-03', '2021-09-01']
+y = [0, 2, 3, 1]
+ax[0].plot(x, y, 'd')
+ax[0].tick_params(axis='x', labelrotation=90, color='r', labelcolor='r')
+ax[0].set_title('Dates out of order')
+
+# convert to datetime64
+x = np.asarray(x, dtype='datetime64[s]')
+ax[1].plot(x, y, 'd')
+ax[1].tick_params(axis='x', labelrotation=90)
+ax[1].set_title('x converted to datetimes')
+
+plt.show()
