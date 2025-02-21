@@ -1,0 +1,16 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, ax = plt.subplots(1, 2, layout='constrained', figsize=(6, 2.5))
+x = ['1', '5', '2', '3']
+y = [1, 4, 2, 3]
+ax[0].plot(x, y, 'd')
+ax[0].tick_params(axis='x', color='r', labelcolor='r')
+ax[0].set_xlabel('Categories')
+ax[0].set_title('Ticks seem out of order / misplaced')
+
+# convert to numbers:
+x = np.asarray(x, dtype='float')
+ax[1].plot(x, y, 'd')
+ax[1].set_xlabel('Floats')
+ax[1].set_title('Ticks as expected')
