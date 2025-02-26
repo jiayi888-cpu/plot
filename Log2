@@ -1,0 +1,7 @@
+fig, ax = plt.subplots()
+ax.bar(["L1 cache", "L2 cache", "L3 cache", "RAM", "SSD"],
+       [32, 1_000, 32_000, 16_000_000, 512_000_000])
+ax.set_yscale('log', base=2)
+ax.set_yticks([1, 2**10, 2**20, 2**30], labels=['kB', 'MB', 'GB', 'TB'])
+ax.set_title("Typical memory sizes")
+ax.yaxis.grid()
