@@ -1,0 +1,9 @@
+fig, (ax1, ax2) = plt.subplots(nrows=2, layout="constrained")
+
+ax1.plot(x, y)
+ax1.set_xscale('symlog', linthresh=1)
+format_axes(ax1, title='Linear region: linthresh={linthresh}, linscale={linscale}')
+
+ax2.plot(x, y)
+ax2.set_xscale('symlog', linthresh=1, linscale=0.1)
+format_axes(ax2, title='Linear region: linthresh={linthresh}, linscale={linscale}')
