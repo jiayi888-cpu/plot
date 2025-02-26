@@ -1,0 +1,24 @@
+def format_axes(ax, title=None):
+    """A helper function to better visualize properties of the symlog scale."""
+    ax.xaxis.get_minor_locator().set_params(subs=[2, 3, 4, 5, 6, 7, 8, 9])
+    ax.grid()
+    ax.xaxis.grid(which='minor')  # minor grid on too
+    linthresh = ax.xaxis.get_transform().linthresh
+    linscale = ax.xaxis.get_transform().linscale
+    ax.axvspan(-linthresh, linthresh, color='0.9')
+    if title:
+        ax.set_title(title.format(linthresh=linthresh, linscale=linscale))
+
+
+x = np.linspace(-60, 60, 201)
+y = np.linspace(0, 100.0, 201)
+
+fig, (ax1, ax2) = plt.subplots(nrows=2, layout="constrained")
+
+ax1.plot(x, y)
+ax1.set_xscale('symlog', linthresh=1)
+format_axes(ax1, title='Linear region: linthresh={linthresh}')
+
+ax2.plot(x, y)
+ax2.set_xscale('symlog', linthresh=5)
+format_axes(ax2, title='Linear region: linthresh={linthresh}')
