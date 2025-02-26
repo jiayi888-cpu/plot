@@ -1,0 +1,4 @@
+fig, ax = plt.subplots()
+ax.plot(x, y)
+ax.set_xscale('symlog', linscale=0.05)
+format_axes(ax, title="Discontinuous gradient at linear/log transition")
