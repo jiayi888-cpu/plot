@@ -1,0 +1,24 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, (ax1, ax2, ax3) = plt.subplots(1, 3, layout='constrained', figsize=(7, 7/3))
+# log x axis
+t = np.arange(0.01, 10.0, 0.01)
+ax1.semilogx(t, np.sin(2 * np.pi * t))
+ax1.set(title='semilogx')
+ax1.grid()
+ax1.grid(which="minor", color="0.9")
+
+# log y axis
+x = np.arange(4)
+ax2.semilogy(4*x, 10**x, 'o--')
+ax2.set(title='semilogy')
+ax2.grid()
+ax2.grid(which="minor", color="0.9")
+
+# log x and y axis
+x = np.array([1, 10, 100, 1000])
+ax3.loglog(x, 5 * x, 'o--')
+ax3.set(title='loglog')
+ax3.grid()
+ax3.grid(which="minor", color="0.9")
